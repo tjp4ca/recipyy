@@ -29,10 +29,10 @@ const Home = () => {
           <h1>middle column</h1>
           {yourRecipies ? (
             <section>
-              <p1>Your recipies are displayed here</p1>
+              <p>Your recipies are displayed here</p>
               <Recipies></Recipies>
             </section>
-          ) : (<p1>All recipies being shown</p1>) }
+          ) : (<p>All recipies being shown</p>) }
         </div>
         <div className="col-lg-3 border border-warning text-white">
           <h1>right column</h1>
