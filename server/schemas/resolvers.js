@@ -58,8 +58,7 @@ const resolvers = {
                                                description: args.description,
                                                createdAt: 'just now',
                                                username: context.user.username,
-                                               directions: args.directions,
-                                               ingredients: args.ingredients });
+                                               directions: args.directions });
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
