@@ -16,6 +16,7 @@ const typeDefs = gql`
         username: String
         directions: String
         ingredients: [Ingredient]
+        user: ID
     }
 
     type Ingredient {
