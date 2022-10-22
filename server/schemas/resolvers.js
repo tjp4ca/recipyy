@@ -4,7 +4,7 @@ const resolvers = {
     Query: {
         users: async () => {
             const users = User.find()
-                // .select('-__v -password')
+                .select('-__v -password')
                 .populate('recipes');
                 console.log(users)
                 return users

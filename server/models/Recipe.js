@@ -27,11 +27,11 @@ const recipeSchema = new Schema(
             type: String,
             required: 'You need to have directions in your recipe!'
         },
-        user: {
-            type: Schema.Types.ObjectId,
-            ref: 'User',
-            required: true
-        },
+        // user: {
+        //     type: Schema.Types.ObjectId,
+        //     ref: 'User',
+        //     required: true
+        // },
         ingredients: [ingredientSchema]
     },
     {

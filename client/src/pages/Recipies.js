@@ -12,37 +12,37 @@ const Recipies = (props) => {
             <h2>Recipies will go here</h2>
             <li style={{border: '1px solid red'}}>
                 <h3>Recipie Name</h3>
-                <p3>Ingredients/Description</p3>
+                <p>Ingredients/Description</p>
                 <button type='submit'>Edit</button>
             </li>
             <li style={{border: '1px solid red'}}>
                 <h3>Recipie Name</h3>
-                <p3>Ingredients/Description</p3>
+                <p>Ingredients/Description</p>
                 <button type='submit'>Edit</button>
             </li>
             <li style={{border: '1px solid red'}}>
                 <h3>Recipie Name</h3>
-                <p3>Ingredients/Description</p3>
+                <p>Ingredients/Description</p>
                 <button type='submit'>Edit</button>
             </li>
             <li style={{border: '1px solid red'}}>
                 <h3>Recipie Name</h3>
-                <p3>Ingredients/Description</p3>
+                <p>Ingredients/Description</p>
                 <button type='submit'>Edit</button>
             </li>
             <li style={{border: '1px solid red'}}>
                 <h3>Recipie Name</h3>
-                <p3>Ingredients/Description</p3>
+                <p>Ingredients/Description</p>
                 <button type='submit'>Edit</button>
             </li>
             <li style={{border: '1px solid red'}}>
                 <h3>Recipie Name</h3>
-                <p3>Ingredients/Description</p3>
+                <p>Ingredients/Description</p>
                 <button type='submit'>Edit</button>
             </li>
             <li style={{border: '1px solid red'}}>
                 <h3>Recipie Name</h3>
-                <p3>Ingredients/Description</p3>
+                <p>Ingredients/Description</p>
                 <button type='submit'>Edit</button>
             </li>
         </div>
