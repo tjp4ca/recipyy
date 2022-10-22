@@ -1,0 +1,40 @@
+// auth in SERVER utils
+
+require('dotenv').config();
+
+const jwt = require('jsonwebtoken');
+
+module.exports = {
+    authMiddleware: function({ req }) {
+        let token = req.body.token || req.query.token || req.headers.authorization;
+    
+        // bearer
+        if (req.headers.authorization) {
+          token = token
+            .split(' ')
+            .pop()
+            .trim();
+        }
+    
+        if (!token) {
+          return req;
+        }
+    
+        try {
+        // verify token
+          const { data } = jwt.verify(token, process.env.secret, { maxAge: expiration });
+          req.user = data;
+        } catch {
+          console.log('Invalid token');
+        }
+    
+        return req;
+    },
+
+    signToken: function ({ email, username, _id }) {
+        const payload = { email, username, _id };
+
+        // secret in .env
+        return jwt.sign({ data: payload }, process.env.secret, { expiresIn: expiration });
+    }
+}
