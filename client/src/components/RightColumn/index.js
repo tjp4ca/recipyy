@@ -2,7 +2,10 @@ import React from 'react';
 
 
 function RightColumn(props) {
-  const { setYourRecipies } = props;
+  const { setYourRecipies,
+          setAllRecipies,
+          setNewRecipe
+        } = props;
   return (
     <section>
         <ul>
@@ -10,6 +13,8 @@ function RightColumn(props) {
                 <button>
                     <span onClick={() => {
                         setYourRecipies(true);
+                        setAllRecipies(false);
+                        setNewRecipe(false);
                     }}>Your Recipies</span>
                 </button>
             </li>
@@ -17,13 +22,17 @@ function RightColumn(props) {
                 <button>
                     <span onClick={() => {
                         setYourRecipies(false);
+                        setNewRecipe(false);
+                        setAllRecipies(true);
                     }}>All Recipies</span>
                 </button>
             </li>
             <li>
                 <button>
                     <span onClick={() => {
-                        alert("This works but doesn't do anything yet");
+                        setYourRecipies(false);
+                        setAllRecipies(false);
+                        setNewRecipe(true);
                     }}>New Recipe</span>
                 </button>
             </li>
