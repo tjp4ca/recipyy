@@ -11,6 +11,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -22,10 +23,29 @@ import Ingredients from './pages/Ingredients';
 import PageNotFound from './pages/PageNotFound';
 import Home from './pages/Home';
 
-const client = new ApolloClient({
+// const client = new ApolloClient({
+//   uri: '/graphql',
+//   cache: new InMemoryCache
+// })
+
+const httpLink = createHttpLink({
   uri: '/graphql',
-  cache: new InMemoryCache
-})
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
@@ -56,12 +76,6 @@ function App() {
                     element={<Signup />} 
                   />
 
-
-                  <Route 
-                    path="*" 
-                    element={<PageNotFound />} 
-                  />
-
                   <Route 
                     path="/recipies" 
                     element={<Recipies />} 
@@ -77,6 +91,11 @@ function App() {
                     element={<Home />}
                   />
                   {/*path will be changed later*/}
+
+                  <Route 
+                    path="*" 
+                    element={<PageNotFound />} 
+                  />
 
                 </Routes>
               </div>

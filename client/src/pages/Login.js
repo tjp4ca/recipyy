@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
 import { Link } from 'react-router-dom';
 
-// import auth
+import Auth from '../utils/auth';
 
 const Login = (props) => {
     const [formInput, setFormInput] = useState({ 
         username:'', 
         password:'' 
     });
+    const [login, { error }] = useMutation(LOGIN_USER);
+
 
     const handleChange = (event) => {
         console.log(event.target.value);
@@ -25,6 +28,21 @@ const Login = (props) => {
         event.preventDefault();
 
         console.log('clicked login');
+
+        try {
+            const { data } = await login({
+              variables: { ...formInput },
+            });
+      
+            Auth.login(data.login.token);
+        } catch (e) {
+            console.error(e);
+        }
+      
+        setFormInput({
+            username: '',
+            password: '',
+        });
     }
 
     return (
@@ -73,6 +91,9 @@ const Login = (props) => {
                         <button type='submit' className='submitBtn col'><span>Login</span></button>
                     </div>
                 </form>
+
+                {error && <div>Login failed</div>}
+
             </div>
         </div>
     )
