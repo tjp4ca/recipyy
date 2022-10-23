@@ -4,39 +4,54 @@ import React, {useState} from "react";
 // import Cart from "../components/Cart";
 import RightColumn from '../components/RightColumn';
 import Recipies from '../components/Recipies';
+import Newrecipe from '../components/Newrecipe';
 
 const Home = () => {
 
-  const documentWidth = document.body.clientWidth;
-  const documentWidthString = documentWidth.toString() + 'px';
-  const fullWidth = {
-    width: documentWidthString
-  }
-
   const [yourRecipies, setYourRecipies] = useState(false);
+  const [allRecipies, setAllRecipies] = useState(false);
+  const [newRecipe, setNewRecipe] = useState(false);
 
   return (
-    <div className="container border border-success mx-0 px-0 justify-content-left home-box" style={fullWidth}>
+    <div className="container-fluid mx-0 px-0 justify-content-center home-box">
       {/*interior divs can be moved into componants at a later date */}
       {/* <CategoryMenu />
       <ProductList />
       <Cart /> */}
       <div className="row mx-0 px-0">
-        <div className="col-lg-3 border border-warning text-white">
-          <h1>left column {documentWidthString}</h1>
+        <div className="col-lg-2 border border-warning text-white">
+          <h1>left column</h1>
         </div>
-        <div className="col-lg-6 border border-danger text-white">
+        <div className="col-lg-8 border border-danger text-white">
           <h1>middle column</h1>
           {yourRecipies ? (
             <section>
               <p>Your recipies are displayed here</p>
               <Recipies></Recipies>
             </section>
-          ) : (<p>All recipies being shown</p>) }
+          ) : (<></>) }
+
+          {allRecipies ? (
+            <section>
+              <p>All recipies are displayed here</p>
+            </section>
+          ) : (<></>) }
+
+          {newRecipe ? (
+            <section>
+              <p>Make new recipe</p>
+              <Newrecipe />
+            </section>
+          ) : (<></>) }
+
         </div>
-        <div className="col-lg-3 border border-warning text-white">
+        <div className="col-lg-2 border border-warning text-white">
           <h1>right column</h1>
-          <RightColumn setYourRecipies={setYourRecipies} ></RightColumn>
+          <RightColumn 
+            setYourRecipies={setYourRecipies}
+            setAllRecipies={setAllRecipies}
+            setNewRecipe={setNewRecipe}
+          ></RightColumn>
         </div>
       </div>
     </div>
