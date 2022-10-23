@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 
 const Login = (props) => {
+    // use email to login
     const [formInput, setFormInput] = useState({ 
-        username:'', 
+        email:'', 
         password:'' 
     });
     const [login, { error }] = useMutation(LOGIN_USER);
@@ -39,8 +40,9 @@ const Login = (props) => {
             console.error(e);
         }
       
+        // use email to login
         setFormInput({
-            username: '',
+            email: '',
             password: '',
         });
     }
@@ -56,20 +58,21 @@ const Login = (props) => {
                     </div>
 
                     <div className='row mx-5 mt-5'>
-                        <h2 className='printInput col-12'>Hello {formInput.username}</h2>
+                        <h2 className='printInput col-12'>Hello {formInput.email}</h2>
                     </div>
 
                     <div className='inputBox mx-5 mt-5'>
                         <input 
+                            // use email to login
                             onChange={handleChange}
-                            name='username'
-                            type='text'
-                            // placeholder='Username'
-                            value={formInput.username}
+                            name='email'
+                            type='email'
+                            // placeholder='Email'
+                            value={formInput.email}
                             required='required'
                         />
                         <span>
-                            Username
+                            Email
                         </span>
                     </div>
 

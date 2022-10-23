@@ -27,12 +27,7 @@ const recipeSchema = new Schema(
             type: String,
             required: 'You need to have directions in your recipe!'
         },
-        // user: {
-        //     type: Schema.Types.ObjectId,
-        //     ref: 'User',
-        //     required: true
-        // },
-        ingredients: [ingredientSchema]
+        //ingredients: [ingredientSchema]
     },
     {
         toJSON: {
@@ -41,9 +36,9 @@ const recipeSchema = new Schema(
     }
 );
 
-recipeSchema.virtual('ingredientCount').get(function () {
+/*recipeSchema.virtual('ingredientCount').get(function () {
     return this.ingredients.length;
-});
+});*/
 
 const Recipe = model('Recipe', recipeSchema);
 
