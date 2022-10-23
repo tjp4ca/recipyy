@@ -87,7 +87,7 @@ function App() {
                   />
 
                   <Route 
-                    path="/home" 
+                    path="/" 
                     element={<Home />}
                   />
                   {/*path will be changed later*/}
