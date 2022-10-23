@@ -7,9 +7,10 @@ const typeDefs = gql`
         email: String
 
         password: String
-        
+
         recipes: [Recipe]
     }
+
     type Recipe {
         _id: ID
         recipeText: String
@@ -17,22 +18,20 @@ const typeDefs = gql`
         createdAt: String
         username: String
         directions: String
-        ingredients: [Ingredient]
-        user: ID
     }
-    type Ingredient {
-        _id: ID
-        ingredientBody: String
-    }
+
     type Query {
+        me: User
         users: [User]
         recipes: [Recipe]
     }
+
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addRecipe(recipeText: String!, description: String!, directions: String!): Recipe
     }
+
     type Auth {
         token: ID!
         user: User

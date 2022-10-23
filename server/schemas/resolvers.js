@@ -4,15 +4,23 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
+        me: async (parent, args, context) => {
+            if (context.user) {
+                const userData = await User.findOne({ _id: context.user._id })
+                  .select('-__v -password')
+                  .populate('recipes');
+            
+                return userData;
+            }
+            
+            throw new AuthenticationError('Not logged in');
+        },
+
         users: async () => {
             const users = User.find()
-
-                // add back in later
-                // .select('-__v -password')
-
+                .select('-__v -password')
                 // remove later after token
-                .select('+password')
-
+                // .select('+password')
                 .populate('recipes');
  
 
@@ -49,6 +57,26 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+
+        addRecipe: async (parent, args, context) => {
+            if (context.user) {
+                const recipe = Recipe.create({ recipeText: args.recipeText,
+                                               description: args.description,
+                                               createdAt: 'just now',
+                                               username: context.user.username,
+                                               directions: args.directions });
+
+                await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { recipes: recipe._id } },
+                    { new: true }
+                );
+
+                return recipe;
+            }
+
+            throw new AuthenticationError('Not logged in');
+        }
     }
 };
 
