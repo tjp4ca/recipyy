@@ -1,10 +1,10 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_ALL_RECIPIES } from '../../utils/queries';
+import { QUERY_ALL_RECIPES, QUERY_RECIPES } from '../../utils/queries';
 
-const AllRecipies = () => {
+const AllRecipes = () => {
 
-    // const {data} = useQuery(QUERY_ALL_RECIPIES);
+    // const {data} = useQuery(QUERY_ALL_RECIPES);
     // let recipe;
     // if (data) {
     //     recipe = data.recipe;
@@ -13,21 +13,25 @@ const AllRecipies = () => {
     //     console.log(recipe);
     // }
 
-    // const recipies = useQuery({ query: QUERY_ALL_RECIPIES });
+    // const recipes = useQuery({ query: QUERY_ALL_RECIPES });
     // // cache.writeQuery({
-    // //   query: QUERY_ALL_RECIPIES,
-    // //   data: { recipies: [...recipies] },
+    // //   query: QUERY_ALL_RECIPES,
+    // //   data: { recipes: [...recipes] },
     // // });
     // function testFunction() {
-    //     console.log(recipies);
+    //     console.log(recipes);
     // }
 
 
-    const { loading, data } = useQuery(QUERY_ALL_RECIPIES);
+    const { aloading, adata } = useQuery(QUERY_ALL_RECIPES);
 
-    const recipies = data?.recipies || [];
-    console.log(recipies);
+    const arecipes = adata?.recipes || [];
+    console.log(arecipes);
 
+    const { loading, data } = useQuery(QUERY_RECIPES);
+
+    const recipes = data?.recipes || [];
+    console.log(recipes);
 
 
 
@@ -51,4 +55,4 @@ const AllRecipies = () => {
     );
 };
 
-export default AllRecipies;
+export default AllRecipes;

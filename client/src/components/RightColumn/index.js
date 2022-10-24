@@ -2,8 +2,8 @@ import React from 'react';
 
 
 function RightColumn(props) {
-  const { setYourRecipies,
-          setAllRecipies,
+  const { setYourRecipes,
+          setAllRecipes,
           setNewRecipe
         } = props;
   return (
@@ -12,26 +12,26 @@ function RightColumn(props) {
             <li>
                 <button>
                     <span onClick={() => {
-                        setYourRecipies(true);
-                        setAllRecipies(false);
+                        setYourRecipes(true);
+                        setAllRecipes(false);
                         setNewRecipe(false);
-                    }}>Your Recipies</span>
+                    }}>Your Recipes</span>
                 </button>
             </li>
             <li>
                 <button>
                     <span onClick={() => {
-                        setYourRecipies(false);
+                        setYourRecipes(false);
                         setNewRecipe(false);
-                        setAllRecipies(true);
-                    }}>All Recipies</span>
+                        setAllRecipes(true);
+                    }}>All Recipes</span>
                 </button>
             </li>
             <li>
                 <button>
                     <span onClick={() => {
-                        setYourRecipies(false);
-                        setAllRecipies(false);
+                        setYourRecipes(false);
+                        setAllRecipes(false);
                         setNewRecipe(true);
                     }}>New Recipe</span>
                 </button>

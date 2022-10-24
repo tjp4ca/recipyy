@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Recipies = () => {
+const Recipes = () => {
 
     const recipeList = [
         {
@@ -57,4 +57,4 @@ const Recipies = () => {
     );
 };
 
-export default Recipies;
+export default Recipes;

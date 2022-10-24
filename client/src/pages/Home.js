@@ -3,14 +3,14 @@ import React, {useState} from "react";
 // import CategoryMenu from "../components/CategoryMenu";
 // import Cart from "../components/Cart";
 import RightColumn from '../components/RightColumn';
-import Recipies from '../components/Recipies';
-import AllRecipies from '../components/AllRecipies';
+import Recipes from '../components/Recipes';
+import AllRecipes from '../components/AllRecipes';
 import Newrecipe from '../components/Newrecipe';
 
 const Home = () => {
 
-  const [yourRecipies, setYourRecipies] = useState(false);
-  const [allRecipies, setAllRecipies] = useState(false);
+  const [yourRecipes, setYourRecipes] = useState(false);
+  const [allRecipes, setAllRecipes] = useState(false);
   const [newRecipe, setNewRecipe] = useState(false);
 
   return (
@@ -25,17 +25,17 @@ const Home = () => {
         </div>
         <div className="col-lg-8 border border-danger text-white">
           <h1>middle column</h1>
-          {yourRecipies ? (
+          {yourRecipes ? (
             <section>
-              <p>Your recipies are displayed here</p>
-              <Recipies></Recipies>
+              <p>Your recipes are displayed here</p>
+              <Recipes></Recipes>
             </section>
           ) : (<></>) }
 
-          {allRecipies ? (
+          {allRecipes ? (
             <section>
-              <p>All recipies are displayed here</p>
-              <AllRecipies />
+              <p>All recipes are displayed here</p>
+              <AllRecipes />
             </section>
           ) : (<></>) }
 
@@ -50,8 +50,8 @@ const Home = () => {
         <div className="col-lg-2 border border-warning text-white">
           <h1>right column</h1>
           <RightColumn 
-            setYourRecipies={setYourRecipies}
-            setAllRecipies={setAllRecipies}
+            setYourRecipes={setYourRecipes}
+            setAllRecipes={setAllRecipes}
             setNewRecipe={setNewRecipe}
           ></RightColumn>
         </div>

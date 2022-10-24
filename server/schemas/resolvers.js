@@ -28,9 +28,14 @@ const resolvers = {
                 return users
         },
 
-        recipes: async () => {
-            return Recipe.find();
-        }
+        // recipes: async () => {
+        //     return Recipe.find();
+        // }
+
+        recipes: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Recipe.find(params);
+          },
     },
 
     Mutation: {
