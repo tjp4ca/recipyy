@@ -4,6 +4,7 @@ import React, {useState} from "react";
 // import Cart from "../components/Cart";
 import RightColumn from '../components/RightColumn';
 import Recipies from '../components/Recipies';
+import AllRecipies from '../components/AllRecipies';
 import Newrecipe from '../components/Newrecipe';
 
 const Home = () => {
