@@ -9,19 +9,19 @@ const Newrecipe = () => {
         <section className='text-white'>
             <form>New Recipe Form
                 <div>
-                    <label for="rtext">recipeText:</label>
+                    <label htmlFor="rtext">recipeText:</label>
                     <input type="text" id="rtext" name="rtext"></input>
                 </div>
                 <div>
-                    <label for="uname">username:</label>
+                    <label htmlFor="uname">username:</label>
                     <input type="text" id="uname" name="uname"></input>
                 </div>
                 <div>
-                    <label for="des">descriptin:</label>
+                    <label htmlFor="des">descriptin:</label>
                     <input type="text" id="des" name="des"></input>
                 </div>
                 <div>
-                    <label for="dir">directions:</label>
+                    <label htmlFor="dir">directions:</label>
                     <input type="text" id="dir" name="dir"></input>
                 </div>
                 {/* <div>
