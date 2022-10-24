@@ -34,6 +34,7 @@ const Home = () => {
           {allRecipies ? (
             <section>
               <p>All recipies are displayed here</p>
+              <AllRecipies />
             </section>
           ) : (<></>) }
 
