@@ -9,3 +9,15 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_ALL_RECIPIES = gql`
+  query recipies($recipeText: String) {
+    recipies(recipeText: $recipieText) {
+      _id
+      recipeText
+      username
+      description
+      directions
+    }
+  }
+`;
