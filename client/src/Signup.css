@@ -37,25 +37,6 @@
 /* form end */
 
 
-/* tabBtn start */
-/* #tabBtn2::before,
-#tabBtn2::after {
-  background: #ffbc00;
-  box-shadow: 0 0 5px #ffbc00,
-  0 0 15px #ffbc00,
-  0 0 30px #ffbc00,
-  0 0 60px #ffbc00;
-} */
-
-/* .form .tabBtn:nth-child(2)::before,
-.form .tabBtn:nth-child(2)::after {
-  background: #d400d4;
-  box-shadow: 0 0 5px #d400d4,
-  0 0 15px #d400d4,
-  0 0 30px #d400d4,
-  0 0 60px #d400d4;
-} */
-
 .form .tabBtn2 {
   position: relative;
   /* width: 155px; */

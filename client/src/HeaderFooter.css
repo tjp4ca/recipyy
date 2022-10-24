@@ -9,43 +9,6 @@
 }
 
 
-/* .header {
-    border: red solid 3px;
-    height: 150px;
-
-
-} */
-
-/* .headerBox {
-    border: red solid 3px;
-} */
-
-/* .title {
-    border: red solid 3px;
-    text-decoration: none;
-} */
-
-/* .title h1 {
-    text-decoration: none;
-} */
-
-/* .navBar {
-    border: red solid 3px;
-    
-
-} */
-
-/* .navLink {
-    border: red solid 3px;
-    text-decoration: none;
-    list-style: none;
-    font-size: 25px;
-    
-
-} */
-
-
-
 /* bootstrap css */
 .navbar {
     /* background: #031321; */
@@ -78,10 +41,6 @@
 /* login/signup links */
 .nav-link .navLink:hover {
     color: #fff;
-    /* background: var(--primary-color);
-    box-shadow: 0 0 10px var(--primary-color), 
-    0 0 40px var(--primary-color), 
-    0 0 80px var(--primary-color); */
 }
 
 /* login/signup links */
@@ -123,5 +82,17 @@
 .navLink:hover span {
     left: 100%;
     transition: 1s;
+}
+
+
+
+/* footer start */
+.footer {
+    border: red solid 3px;
+}
+
+.footer p {
+    color: #fff;
+    /* border: red solid 3px; */
 }
 

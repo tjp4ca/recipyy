@@ -10,6 +10,10 @@ class AuthService {
 
     loggedIn() {
         const token = this.getToken();
+        // console.log(token)
+        // console.log(!!token)
+        // console.log(!this.isTokenExpired(token))
+        console.log('hello world')
         return !!token && !this.isTokenExpired(token);
     }
 
@@ -32,9 +36,11 @@ class AuthService {
         localStorage.setItem('id_token', idToken);
 
         window.location.assign('/');
+        // console.log(idToken)
     }
 
     logout() {
+        console.log('log')
         localStorage.removeItem('id_token');
 
         window.location.assign('/');

@@ -1,5 +1,6 @@
 .home-box {
     position: relative;
-    height: 530px;
+    /* height: 530px; */
+    min-height: 100vh;
     border-radius: 8px;
   }

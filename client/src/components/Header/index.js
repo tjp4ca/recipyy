@@ -5,11 +5,8 @@ import Auth from '../../utils/auth';
 
 const Header = () => {
 
-
     // remove later!!!! manually render logout
-    // const loggedIn = false;
-
-
+    // const loggedIn = true;
 
     const logout = event => {
         event.preventDefault();
@@ -18,32 +15,6 @@ const Header = () => {
 
 
     return (
-
-            // <header className='header'>
-            //     <div className='headerBox row align-middle'>
-            //         <Link className='title col' to="/">
-            //         <h1 className='mt-4'>Title</h1>
-            //         </Link>
-
-            //         <nav className='navBar col text-center'>
-            //             <ul className='row'>
-            //                 <li className='navLink col'>
-            //                     <Link to="/">Home</Link>
-            //                 </li>
-            //                 <li className='navLink col'>
-            //                     <Link to="/donation">Donation</Link>
-            //                 </li>
-            //                 <li className='navLink col'>
-            //                     <Link to="/login">Login /</Link>
-            //                     <Link to="/signup"> Signup</Link>
-            //                 </li>
-            //                 {/* <li className='navLink col'>
-            //                     <Link to="/signup">Signup</Link>
-            //                 </li> */}
-            //             </ul>
-            //         </nav>
-            //     </div>
-            // </header>
 
         <header>
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -63,8 +34,10 @@ const Header = () => {
                     </Link>
                     <div className='nav-item nav-link'>
                     {
+
                         // loggedIn ? (
-                        Auth.loggedIn ? (
+
+                        Auth.loggedIn() ? (
                             <>
                                 <Link to='/' className='navLink' onClick={logout}>
                                     <span></span>

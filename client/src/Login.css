@@ -19,43 +19,6 @@ body {
 }
 
 
-/* .formContainer {
-  border: 3px red solid;
-} */
-
-/* .form {
-  border: 3px red solid;
-} */
-
-/* .tabBtn {
-  border: 3px red solid;
-} */
-
-/* h2 {
-  border: 3px red solid;
-} */
-
-/* .inputBox {
-  border: 3px red solid;
-} */
-
-/* .submitBtn {
-  border: 3px red solid;
-} */
-
-
-/* .container {
-  border: red solid 3px;
-} */
-
-/* .box {
-  border: red solid 3px;
-} */
-
-/* .form {
-  border: red solid 3px;
-} */
-
 .noPage {
   color: #fff;
   text-align: center;
@@ -64,27 +27,10 @@ body {
 .printInput {
   /* border: red solid 3px; */
   color: #fff;
+  font-size: 28px;
   text-align: center;
 }
 
-/* .tabBox {
-  border: red solid 3px;
-} */
-
-/* .tabBtn {
-  border: red solid 3px;
-} */
-
-/* .inputBox {
-  border: red solid 3px;
-} */
-
-/* .submitBtn {
-  border: red solid 3px;
-} */
-
-
-/* michael start */
 
 /* form container start */
 .container {
@@ -290,15 +236,6 @@ body {
   0 0 30px #00ccff,
   0 0 60px #00ccff;
 }
-
-/* .form .tabBtn:nth-child(2)::before,
-.form .tabBtn:nth-child(2)::after {
-  background: #d400d4;
-  box-shadow: 0 0 5px #d400d4,
-  0 0 15px #d400d4,
-  0 0 30px #d400d4,
-  0 0 60px #d400d4;
-} */
 /* tabBtn end */
 
 
@@ -424,12 +361,3 @@ body {
   transform: skew(25deg);
 }
 /* submitBtn end */
-
-/* michael end */
-
-
-
-/* nino start */
-
-
-/* nino end */
