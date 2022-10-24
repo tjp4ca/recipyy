@@ -1,5 +1,5 @@
 // require('dotenv').config()
-
+// const stripe = require('stripe')('sk_test_51LwUjsKzkAHe1megvrsztdqumBgXXSA2GaSJxJxnFPjkqOtXLIkMt0z8RfAi7FMPckFtIMrOSu1ZpWVZngkt2Smj00k5LCx2p6');
 const express = require('express');
 const {ApolloServer} = require('apollo-server-express');
 const path = require('path');
@@ -29,6 +29,22 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+app.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.session.create({
+    line_items: [
+      {
+        // Provide the exact price ID (for example, pr_1234) of the amount you want to donate.
+        price: '{{PRICE_ID}}',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${server}?success=true`,
+    cancel_url: `${server}?canceled=true`,
+  });
+  res.redirect(303, session.url);
+});
+
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
@@ -40,7 +56,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath} 🌍`);
     })
   })
-  };
-  
-  // Call the async function to start the server
-  startApolloServer(typeDefs, resolvers);
+};
+
+// Call the async function to start the server
+startApolloServer(typeDefs, resolvers);

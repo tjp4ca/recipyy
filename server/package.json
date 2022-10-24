@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.13.0",
+    "@stripe/stripe-js": "^1.42.0",
     "apollo-server-express": "^3.10.3",
     "bcrypt": "^5.0.0",
     "dotenv": "^16.0.3",
@@ -19,7 +21,8 @@
     "faker": "^4.1.0",
     "graphql": "^16.6.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.6.5"
+    "mongoose": "^6.6.5",
+    "stripe": "^10.15.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
