@@ -10,9 +10,32 @@ export const QUERY_USER = gql`
   }
 `;
 
+// export const QUERY_ALL_RECIPIES = gql`
+//   {
+//     recipes {
+//       _id
+//       recipeText
+//       username
+//       description
+//       directions
+//     }
+//   }
+// `;
+// export const QUERY_ALL_RECIPIES = gql`
+//   query recipies($username: String) {
+//     recipies(username: $username) {
+//       _id
+//       recipeText
+//       username
+//       description
+//       directions
+//     }
+//   }
+// `;
+
 export const QUERY_ALL_RECIPIES = gql`
-  {
-    recipe {
+  query recipies($recipeText: String) {
+    recipies(recipeText: $recipieText) {
       _id
       recipeText
       username

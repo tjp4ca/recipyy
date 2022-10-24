@@ -44,7 +44,7 @@ const Recipies = () => {
     return (
         <div className='text-white'>
             {recipeList.map((item) => (
-            <li style={{border: '1px solid red'}}>
+            <li style={{border: '1px solid red'}} key={item.recipeText}>
                 <h3>{item.recipeText}</h3>
                 <p>{item.username}</p>
                 <p>{item.description}</p>
