@@ -4,6 +4,7 @@ import React, {useState} from "react";
 // import Cart from "../components/Cart";
 import RightColumn from '../components/RightColumn';
 import Recipies from '../components/Recipies';
+import AllRecipies from '../components/AllRecipies';
 import Newrecipe from '../components/Newrecipe';
 
 const Home = () => {
@@ -34,6 +35,7 @@ const Home = () => {
           {allRecipies ? (
             <section>
               <p>All recipies are displayed here</p>
+              <AllRecipies />
             </section>
           ) : (<></>) }
 
