@@ -52,7 +52,7 @@ const Signup = () => {
                     </div>
 
                     <div className='row mx-5 mt-5'>
-                        <h2 className='printInput col-12'>Welcome {formInput.email}</h2>
+                        <h2 className='printInput col-12'>Welcome {formInput.username}</h2>
                     </div>
 
                     <div className='inputBox2 mx-5 mt-5'>
