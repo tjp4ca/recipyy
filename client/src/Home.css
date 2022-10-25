@@ -4,3 +4,11 @@
     min-height: 100vh;
     border-radius: 8px;
   }
+
+.text-c-blue {
+  color: #00ccff;
+}
+
+.text-c-green {
+  color: #4af3bb;
+}

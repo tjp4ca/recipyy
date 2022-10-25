@@ -26,6 +26,7 @@ const Home = () => {
         <div className="col-lg-2 border border-warning text-white">
           {loggedIn && userData ? (
             <div>
+              <h1 className="text-c-blue">{userData.me.username}</h1>
               <FriendList
                 username={userData.me.username}
                 friendCount={userData.me.friendCount}
