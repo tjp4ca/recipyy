@@ -1,62 +1,49 @@
-import React, {useState} from "react";
-// import ProductList from "../components/ProductList";
-// import CategoryMenu from "../components/CategoryMenu";
-// import Cart from "../components/Cart";
-import RightColumn from '../components/RightColumn';
-import Recipes from '../components/Recipes';
-import AllRecipes from '../components/AllRecipes';
-import Newrecipe from '../components/Newrecipe';
+import React                                       from 'react';
+import { useQuery }                                from '@apollo/client';
+import RecipeList                                  from '../components/RecipeList';
+import { QUERY_ME, QUERY_ME_BASIC, QUERY_RECIPES } from '../utils/queries';
+import Auth                                        from '../utils/auth';
+import FriendList                                  from '../components/FriendList';
+import RecipeForm                                  from '../components/RecipeForm';
 
 const Home = () => {
+  const { loading, data } = useQuery(QUERY_RECIPES);
+  const { data: userData } = useQuery(QUERY_ME_BASIC);
 
-  const [yourRecipes, setYourRecipes] = useState(false);
-  const [allRecipes, setAllRecipes] = useState(false);
-  const [newRecipe, setNewRecipe] = useState(false);
+  const recipes = data?.recipes || [];
+  console.log(recipes);
+
+  const loggedIn = Auth.loggedIn();
 
   return (
-    <div className="container-fluid mx-0 px-0 justify-content-center home-box">
-      {/*interior divs can be moved into componants at a later date */}
-      {/* <CategoryMenu />
-      <ProductList />
-      <Cart /> */}
-      <div className="row mx-0 px-0">
-        <div className="col-lg-2 border border-warning text-white">
-          <h1>left column</h1>
+    <main>
+      <div>
+        <div>
+          {loggedIn && (
+            <div>
+              <RecipeForm />
+            </div>
+          )}
         </div>
-        <div className="col-lg-8 border border-danger text-white">
-          <h1>middle column</h1>
-          {yourRecipes ? (
-            <section>
-              <p>Your recipes are displayed here</p>
-              <Recipes></Recipes>
-            </section>
-          ) : (<></>) }
-
-          {allRecipes ? (
-            <section>
-              <p>All recipes are displayed here</p>
-              <AllRecipes />
-            </section>
-          ) : (<></>) }
-
-          {newRecipe ? (
-            <section>
-              <p>Make new recipe</p>
-              <Newrecipe />
-            </section>
-          ) : (<></>) }
-
+        <div className={`${loggedIn}`}>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <RecipeList recipes={recipes} title="Recently-added recipes" />
+          )}
         </div>
-        <div className="col-lg-2 border border-warning text-white">
-          <h1>right column</h1>
-          <RightColumn 
-            setYourRecipes={setYourRecipes}
-            setAllRecipes={setAllRecipes}
-            setNewRecipe={setNewRecipe}
-          ></RightColumn>
-        </div>
+
+        {loggedIn && userData ? (
+          <div>
+            <FriendList
+              username={userData.me.username}
+              friendCount={userData.me.friendCount}
+              friends={userData.me.friends}
+            />
+          </div>
+        ) : null}
       </div>
-    </div>
+    </main>
   );
 };
 

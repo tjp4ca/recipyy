@@ -28,6 +28,10 @@ const Header = () => {
                         <span></span>
                         Home
                     </Link>
+                    <Link to="/team" className="nav-item nav-link">
+                        <span></span>
+                        Team
+                    </Link>
                     <Link to="/donation" className="nav-item nav-link">
                         <span></span>
                         Donation
@@ -39,6 +43,7 @@ const Header = () => {
 
                         Auth.loggedIn() ? (
                             <>
+                                <Link to="/profile">Me</Link>
                                 <Link to='/' className='navLink' onClick={logout}>
                                     <span></span>
                                     Logout
@@ -50,7 +55,7 @@ const Header = () => {
                                     <span></span>
                                     Login/
                                 </Link>
-                                    <Link to="/signup" className='navLink'>
+                                <Link to="/signup" className='navLink'>
                                     <span></span>
                                     Signup
                                 </Link>

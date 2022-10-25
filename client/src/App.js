@@ -2,6 +2,8 @@ import './HeaderFooter.css';
 import './Login.css';
 import './Signup.css';
 import './Home.css';
+import './Donation.css'
+import './Team.css'
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -14,14 +16,15 @@ import {
 import { setContext } from '@apollo/client/link/context';
 
 import Header from './components/Header';
-import Footer from './components/Footer';
 
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Recipies from './pages/Recipies';
-import Ingredients from './pages/Ingredients';
+import SingleRecipe from './pages/SingleRecipe';
+import Profile from './pages/Profile';
 import PageNotFound from './pages/PageNotFound';
-import Home from './pages/Home';
+import Donation from './pages/Donation';
+import Team from './pages/Team';
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -60,12 +63,10 @@ function App() {
               <div>
                 <Routes>
 
-                  {/* Nino */}
-                  {/* <Route 
-                      path="/" 
-                      element={<Home />} 
-                  /> */}
-
+                  <Route 
+                    path="/" 
+                    element={<Home />}
+                  />
 
                   <Route 
                     path="/login" 
@@ -76,21 +77,25 @@ function App() {
                     element={<Signup />} 
                   />
 
-                  <Route 
-                    path="/recipies" 
-                    element={<Recipies />} 
+                  <Route path="/profile">
+                    <Route path=":username" element={<Profile />} />
+                    <Route path="" element={<Profile />} />
+                  </Route>
+
+                  <Route
+                    path="/recipe/:id"
+                    element={<SingleRecipe />}
                   />
 
                   <Route 
-                    path="/ingredients" 
-                    element={<Ingredients />} 
+                    path="/team" 
+                    element={<Team />}
                   />
 
                   <Route 
-                    path="/" 
-                    element={<Home />}
+                    path="/donation" 
+                    element={<Donation />} 
                   />
-                  {/*path will be changed later*/}
 
                   <Route 
                     path="*" 
@@ -100,8 +105,6 @@ function App() {
                 </Routes>
               </div>
 
-
-            <Footer />
 
 
           </div>
