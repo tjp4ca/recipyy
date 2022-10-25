@@ -13,6 +13,11 @@ import SingleRecipe from './pages/SingleRecipe';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 
+import './HeaderFooter.css';
+import './Login.css';
+import './Signup.css';
+import './Home.css';
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
