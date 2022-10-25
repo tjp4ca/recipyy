@@ -12,3 +12,23 @@
 .text-c-green {
   color: #4af3bb;
 }
+
+.border-cb-green {
+  border-bottom-style: solid;
+  border-color: #4af3bb;
+}
+
+.border-cb-blue {
+  border-bottom-style: solid;
+  border-color: #00ccff;
+}
+
+.border-cr-blue {
+  border-right-style: solid;
+  border-color: #00ccff;
+}
+
+.border-cl-blue {
+  border-left-style: solid;
+  border-color: #00ccff;
+}
