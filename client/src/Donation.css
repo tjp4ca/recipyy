@@ -1,0 +1,131 @@
+.donateChoice {
+    /* border: red solid 3px; */
+}
+
+
+.cardForm {
+
+    /* border: red solid 3px; */
+
+    width: 450px;
+    /* background: #051736; */
+
+}
+
+/* .cardLink {
+    border: red solid 3px;
+} */
+
+.donateAmount {
+    font-size: 20px;
+    color: white;
+}
+
+.tilt {
+    width: 500px;
+    color: black;
+}
+
+.creditContainer {
+    margin-top: 50px;
+}
+
+.creditBox {
+    width: 400px;
+    height: 250px;
+    position: relative;
+    background: radial-gradient(
+        140% 140% at 0% 0%,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    border-top: 1px solid #eeeded8a;
+    border-left: 1px solid #eeeded8a;
+    border-radius: 30px;
+
+    backdrop-filter: blur(30px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* .creditCard {
+    width: 500px;
+    height: 300px;
+    border-top: 1px solid silver;
+    border-left: 1px solid silver;
+    border-radius: 10px;
+    background: rgba(200,200,200,0.1);
+    backdrop-filter: blur(7px);
+
+    box-shadow: 4px 4px 4px rgba(68,68,68,0.6);
+} */
+
+.bank {
+    color: #ffffff;
+    font-size: 25px;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+.chip {
+    width: 40px;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+}
+
+.contactless {
+    width: 40px;
+    position: absolute;
+    top: 60px;
+    left: 80px;
+}
+
+.number {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 75px;
+    left: 30px;
+}
+
+.card-holder {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    text-transform: uppercase;
+}
+
+.card-holder span {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.valid {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 20px;
+    left: 200px;
+    text-transform: uppercase;
+}
+
+.valid span {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.visa {
+    width: 60px;
+    position: absolute;
+    right: 25px;
+    bottom: 30px;
+}
+
+

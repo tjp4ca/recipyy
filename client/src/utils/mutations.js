@@ -23,3 +23,49 @@ export const ADD_USER = gql`
         }
     }
 `;
+
+export const ADD_FRIEND = gql`
+  mutation addFriend($id: ID!) {
+    addFriend(friendId: $id) {
+      _id
+      username
+      friendCount
+      friends {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+export const ADD_RECIPE = gql`
+  mutation addRecipe($name: String!, $description: String!, $instructions: String!) {
+    addRecipe(name: $name, description: $description, instructions: $instructions) {
+      _id
+      name
+      description
+      instructions
+      createdAt
+      createdBy
+      commentCount
+      comments {
+        _id
+      }
+    }
+  }
+`;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($recipeId: ID!, $body: String!) {
+    addComment(recipeId: $recipeId, body: $body) {
+      _id
+      commentCount
+      comments {
+        _id
+        body
+        createdAt
+        createdBy
+      }
+    }
+  }
+`;

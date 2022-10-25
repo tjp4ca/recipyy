@@ -1,11 +1,11 @@
 // auth in SERVER utils
 
-// require('dotenv').config();
+require('dotenv').config();
 
 const jwt = require('jsonwebtoken');
 
-const secret = 'myrecipyysecrets';
 const expiration = '1h';
+// const expiration = process.env.expiration
 
 module.exports = {
     authMiddleware: function({ req }) {
@@ -24,9 +24,7 @@ module.exports = {
         }
     
         try {
-        // verify token
-          // const { data } = jwt.verify(token, process.env.secret, { maxAge: process.env.expiration });
-          const { data } = jwt.verify(token, secret, { maxAge: expiration });
+          const { data } = jwt.verify(token, process.env.secret, { maxAge: expiration });
 
           req.user = data;
         } catch {
@@ -39,9 +37,10 @@ module.exports = {
     signToken: function ({ email, username, _id }) {
         const payload = { email, username, _id };
 
-        // secret in .env
-        // return jwt.sign({ data: payload }, process.env.secret, { expiresIn: process.env.expiration });
-        return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+        console.log('dotenv error')
+        console.log(process.env.expiration);
+
+        return jwt.sign({ data: payload }, process.env.secret, { expiresIn: expiration });
 
     }
 }
