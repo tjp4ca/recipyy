@@ -1,11 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { QUERY_RECIPE } from '../utils/queries';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 import RecipeUpdate from '../components/RecipeUpdate';
 import Auth from '../utils/auth';
+import { REMOVE_RECIPE } from '../utils/mutations';
 
 const SingleRecipe = props => {
   const { id: recipeId } = useParams();
@@ -15,6 +16,21 @@ const SingleRecipe = props => {
   });
 
   const recipe = data?.recipe || {};
+
+  const [removeRecipe] = useMutation(REMOVE_RECIPE);
+
+  const handleRemoveRecipe = async (recipeId) => {
+    if (1 === 3) {
+      return false;
+    }
+    try {
+      await removeRecipe({
+        variable: [ recipeId ],
+      })
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -41,6 +57,7 @@ const SingleRecipe = props => {
       </div>
       <div>
         <RecipeUpdate recipeId={recipe._id} ></RecipeUpdate>
+        <button onClick={() => handleRemoveRecipe(recipe.recipeId)}>Delete Recipe</button>
       </div>
 
       <span className='text-c-blue' style={{ fontWeight: 1000 }}>Comments</span>

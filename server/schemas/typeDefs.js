@@ -47,9 +47,11 @@ const typeDefs = gql`
     addFriend(friendId: ID!): User
     addRecipe(name: String!, description: String!, instructions: String!): Recipe
     addComment(recipeId: ID!, body: String!): Recipe
-    updateRecipe(id: ID!, description: String!, instruction: String!): Recipe
-    removeRecipe(recipeId: ID!): Recipe
+    updateRecipe(id: ID!, name: String!, description: String!, instruction: String!): Recipe
+    removeRecipe(recipeId: ID!): User
   }
 `;
+
+
 
 module.exports = typeDefs;

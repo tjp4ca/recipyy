@@ -111,10 +111,11 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
 
-    updateRecipe: async (parent, { id, description, instructions }) => {
+    updateRecipe: async (parent, { id, name, description, instructions }) => {
       // Find and update the matching class using the destructured args
       return await Recipe.findOneAndUpdate(
-        { _id: id }, 
+        { _id: id },
+        { name },
         { description },
         { instructions },
         // Return the newly updated object instead of the original
@@ -122,8 +123,26 @@ const resolvers = {
       );
     },
 
-    removeRecipe: async (parent, { recipeId }) => {
-      return Recipe.findOneAndDelete({ _id: recipeId })
+    // removeRecipe: async (parent, { recipeId }) => {
+    //   return Recipe.findOneAndDelete({ _id: recipeId })
+    // }
+
+    // removeRecipe: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const updatedUser = await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $pull: { recipes: { recipeId: args.recipeId } } },
+    //       { new: true }
+    //     );
+
+    //     return updatedUser;
+    //   }
+
+    //   throw new AuthenticationError("You need to be logged in!");
+    // },
+
+    removeRecipe: async (parent, { _id }) => {
+      return Recipe.findOneAndDelete({ _id });
     }
   }
 };

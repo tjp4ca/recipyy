@@ -1,7 +1,23 @@
 import React    from 'react';
 import { Link } from 'react-router-dom';
+import { REMOVE_RECIPE } from '../../utils/mutations';
+import { useMutation, useQuery } from '@apollo/client';
 
 const RecipeList = ({ recipes, title }) => {
+
+  const [removeRecipe, {error}] = useMutation(REMOVE_RECIPE);
+
+  const removeRecipeHandler = async (recipeId) => {
+    try {
+      const {data} = await removeRecipe({
+        variables: { recipeId }
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+
   if (!recipes.length) {
     return <h3>No recipes yet</h3>;
   }
@@ -30,6 +46,7 @@ const RecipeList = ({ recipes, title }) => {
                 </Link>{' '}
                 created on {recipe.createdAt}
               </p>
+              <button onClick={removeRecipeHandler}>Delete!</button>
             </div>
           </div>
         ))}

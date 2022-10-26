@@ -70,13 +70,41 @@ export const ADD_COMMENT = gql`
   }
 `;
 
+// export const UPDATE_RECIPE = gql`
+//   mutation updateRecipe($name: String!, $description: String!, $instructions: String!) {
+//     updateRecipe(name: $name, description: $description, instructions: $instructions) {
+//       _id
+//       name
+//       description
+//       instructions
+//     }
+//   }
+// `;
+
 export const UPDATE_RECIPE = gql`
-  mutation updateRecipe($name: String!, $description: String!, $instructions: String!) {
-    updateRecipe(name: $name, description: $description, instructions: $instructions) {
+  mutation updateRecipe($recipeId: ID!, $body: String!) {
+    updateRecipe(recipeId: $recipeId, body: $body) {
       _id
       name
       description
-      instructions
+      directions
+    }
+  }
+`;
+
+export const REMOVE_RECIPE = gql`
+  mutation removeRecipe($recipeId: ID!) {
+    removeRecipe(recipeId: $recipeId) {
+      _id
+      name
+      description
+      directions
+      comments {
+        _id
+        body
+        createdAt
+        createdBy
+      }
     }
   }
 `;
