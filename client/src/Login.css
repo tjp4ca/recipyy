@@ -42,7 +42,8 @@ body {
   align-items: center;
 
   margin-top: 50px;
-
+  margin-bottom: 100px;
+  /* border: red 3px solid; */
 }
 
 .logBox {
