@@ -3,6 +3,7 @@
         "username" : "Michael", 
         "email" : "Michael@gmail.com", 
         "password" : "password123",  
-        "recipes" : [] 
+        "recipes" : [],
+        "friends" : []
     }
 ]

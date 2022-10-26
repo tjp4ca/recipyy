@@ -23,6 +23,7 @@ import Recipies from './pages/Recipies';
 import Ingredients from './pages/Ingredients';
 import PageNotFound from './pages/PageNotFound';
 import Home from './pages/Home';
+import Donation from './pages/Donation';
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -90,6 +91,10 @@ function App() {
                   <Route 
                     path="/" 
                     element={<Home />}
+                  />
+                  <Route 
+                    path="/donation" 
+                    element={<Donation />} 
                   />
                   {/*path will be changed later*/}
 

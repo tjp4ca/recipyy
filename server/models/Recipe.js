@@ -1,34 +1,41 @@
 const { Schema, model } = require('mongoose');
-const ingredientSchema = require('./Ingredients');
+const commentSchema = require('./Comment');
 const dateFormat = require('../utils/dateFormat');
 
 const recipeSchema = new Schema(
     {
-        recipeText: {
+        name: {
             type: String,
-            required: 'You need to leave a recipe name!',
-            minlength: 1,
-            maxlength: 280
+            required: 'Must provide recipe name',
+            minlength: 1
         },
+
         description: {
             type: String,
-            required: 'You need to leave a description!'
+            required: 'Must provide recipe description',
+            minlength: 1
         },
+
+        instructions: {
+            type: String,
+            required: 'Must provide recipe instructions',
+            minlength: 1
+        },
+
         createdAt: {
             type: Date,
             default: Date.now,
             get: timestamp => dateFormat(timestamp)
         },
-        username: {
+
+        createdBy: {
             type: String,
             required: true
         },
-        directions: {
-            type: String,
-            required: 'You need to have directions in your recipe!'
-        },
-        //ingredients: [ingredientSchema]
+
+        comments: [commentSchema]
     },
+
     {
         toJSON: {
             getters: true
@@ -36,9 +43,9 @@ const recipeSchema = new Schema(
     }
 );
 
-/*recipeSchema.virtual('ingredientCount').get(function () {
-    return this.ingredients.length;
-});*/
+recipeSchema.virtual('commentCount').get(function () {
+    return this.comments.length;
+});
 
 const Recipe = model('Recipe', recipeSchema);
 

@@ -34,13 +34,13 @@ app.post('/create-checkout-session', async (req, res) => {
     line_items: [
       {
         // Provide the exact price ID (for example, pr_1234) of the amount you want to donate.
-        price: '{{PRICE_ID}}',
+        price: price.id,
         quantity: 1,
       },
     ],
     mode: 'payment',
-    success_url: `${server}?success=true`,
-    cancel_url: `${server}?canceled=true`,
+    success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${url}/`
   });
   res.redirect(303, session.url);
 });
