@@ -1,4 +1,154 @@
-.teamContainer {
+/* .teamContainer {
     color: white;
     font-size: 25px;
+} */
+
+.gitContainer {
+    margin-top: 25px;
+}
+
+.teamTitle {
+    color: #fff;
+    font-size: 25px;
+}
+
+.gitRow {
+    /* border: red 3px solid; */
+}
+
+.gitBox {
+    margin-top: 50px;
+    /* border: red 3px solid; */
+}
+
+.gitCard {
+    width: 100px;
+    border-radius: 20px;
+    border: red 3px solid;
+}
+
+.gitIcon {
+    width: 200px;
+    /* border: red 3px solid; */
+    /* margin: 25px 25px 5px 25px; */
+}
+
+.gitIcon1 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: url(kenny2.png);
+    background-size: 200px;
+}
+
+.gitIcon1:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url(kenny1.png);
+    background-size: 200px;
+    overflow: hidden;
+    animation: animate 4s linear infinite;
+}
+
+.gitIcon2 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: url(matt2.png);
+    background-size: 200px;
+}
+
+.gitIcon2:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url(matt1.png);
+    background-size: 200px;
+    overflow: hidden;
+    animation: animate 4s linear infinite;
+}
+
+.gitIcon3 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: url(mike2.png);
+    background-size: 200px;
+}
+
+.gitIcon3:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url(mike1.png);
+    background-size: 200px;
+    overflow: hidden;
+    animation: animate 4s linear infinite;
+}
+
+.gitIcon4 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: url(nino2.png);
+    background-size: 200px;
+}
+
+.gitIcon4:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url(nino1.png);
+    background-size: 200px;
+    overflow: hidden;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0%, 100% {
+        height: 0px;
+    }
+    50% {
+        height: 100%;
+        /* height: calc(100% - 20px); */
+    }
+}
+
+.gitIcon1,
+.gitIcon2,
+.gitIcon3,
+.gitIcon4 {
+    margin-top: 20px;
+}
+
+.qrCodeTxt {
+    text-transform: uppercase;
+    /* font-size: 0.75em; */
+    margin-top: 20px;
+    color: black;
+    filter: drop-shadow(0 0 20px black)
+            drop-shadow(0 0 60px black);
+    animation: animateText 1s steps(1) infinite;
+}
+
+.card-footer {
+    margin-bottom: 20px;
+}
+
+@keyframes animateText {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }

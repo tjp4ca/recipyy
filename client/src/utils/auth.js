@@ -13,7 +13,7 @@ class AuthService {
         // console.log(token)
         // console.log(!!token)
         // console.log(!this.isTokenExpired(token))
-        console.log('hello world')
+        // console.log('hello world')
         return !!token && !this.isTokenExpired(token);
     }
 

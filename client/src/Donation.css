@@ -1,6 +1,45 @@
+
 .donateChoice {
+    margin-top: 20px;
     /* border: red solid 3px; */
 }
+
+.donateForm {
+    margin-top: 50px;
+    border: red solid 3px;
+}
+
+.cardInfo {
+    border: red solid 3px;
+    /* color: white; */
+}
+
+.payBtn {
+    margin-top: 20px;
+    background: #23242a;
+    /* border: red solid 3px; */
+    border-radius: 10px;
+    border: white solid 2px;
+    color: white;
+    height: 50px;
+    cursor: pointer;
+}
+
+/* .ElementsApp .InputElement.is-invalid {
+    color: white;
+} */
+
+/* .InputElement{
+    color: white;
+} */
+
+/* .InputContainer .InputElement {
+    position: absolute;
+    top: 0;
+    color: white;
+} */
+
+
 
 
 .cardForm {
