@@ -77,7 +77,7 @@ const RecipeForm = () => {
           value={formState.description}
           onChange={handleChange}
           style={{ minHeight: '100px' }}
-          className='w-100 border-c-blue mb-3 p-0'
+          className='w-100 border-c-blue mb-3 p-0 text-c-green'
         ></textarea>
         </div>
 
@@ -88,7 +88,7 @@ const RecipeForm = () => {
           value={formState.instructions}
           onChange={handleChange}
           style={{ minHeight: '150px' }}
-          className='w-100 border-c-blue mb-3 p-0'
+          className='w-100 border-c-blue mb-3 p-0 text-c-green'
         ></textarea>
         </div>
 

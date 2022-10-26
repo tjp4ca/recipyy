@@ -33,7 +33,7 @@ const CommentForm = ({ recipeId }) => {
           value={body}
           onChange={handleChange}
           style={{ minHeight: '75px' , minWidth: '800px', width: '100%'}}
-          className='w-100'
+          className='w-100 text-c-green'
         ></textarea>
 
         <button type="submit">
