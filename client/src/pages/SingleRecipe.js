@@ -20,25 +20,31 @@ const SingleRecipe = props => {
   }
   
   return (
-    <div className='text-white'>
-      <div>
-        <p>
+    <div className='text-white justify-content-center text-center container-fluid m-0 p-0 h-100'>
+      <div className='col-lg-12 text-center'>
+      <div className='mb-5'>
+        <p className='text-c-gold' style={{ fontWeight: 1000 }}>
             {recipe.name}
         </p>
-        <p>
+        <p className='text-c-orange'>
           <span style={{ fontWeight: 700 }}>
             {recipe.createdBy}
           </span>{' '}
-          thought on {recipe.createdAt}
+           on {recipe.createdAt}
         </p>
-        <div>
-          <p>{recipe.description}</p>
-          <p>{recipe.instructions}</p>
+        <div className=''>
+          <p className='text-c-redorange'>{recipe.description}</p>
+          <p className='text-c-red'>{recipe.instructions}</p>
         </div>
       </div>
 
-      {recipe.commentCount > 0 && <CommentList comments={recipe.comments} />}
-      {Auth.loggedIn() && <CommentForm recipeId={recipe._id} />}
+      <div className='row justify-content-center'>
+        {recipe.commentCount > 0 && <CommentList comments={recipe.comments} />}
+      </div>
+      <div className='row justify-content-center'>
+        {Auth.loggedIn() && <CommentForm recipeId={recipe._id} />}
+      </div>
+      </div>
     </div>
   );
 };

@@ -13,6 +13,22 @@ color: #00ccff;
 color: #4af3bb;
 }
 
+.text-c-gold {
+  color: #ffbc00;
+}
+
+.text-c-orange {
+  color: #ff9900;
+}
+
+.text-c-redorange {
+  color: #ff5e00;
+}
+
+.text-c-red {
+  color: #ff0800;
+}
+
 .border-cb-green {
 border-bottom-style: solid;
 border-color: #4af3bb;
@@ -31,4 +47,9 @@ border-color: #00ccff;
 .border-cl-blue {
 border-left-style: solid;
 border-color: #00ccff;
+}
+
+.border-cb-gold {
+  border-bottom-style: solid;
+  border-color: #ffbc00;
 }
