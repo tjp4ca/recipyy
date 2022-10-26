@@ -53,3 +53,33 @@ border-color: #00ccff;
   border-bottom-style: solid;
   border-color: #ffbc00;
 }
+
+.border-c-blue {
+  border-style: solid;
+  border-color: #00ccff;
+}
+
+.background-c-dark {
+  background: #1a0433;
+}
+
+/* input.input-box, textarea { background: cyan; } */
+
+input[type="text"], textarea {
+
+  background-color : #1a0433; 
+
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #4af3bb;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #4af3bb;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #4af3bb;
+}

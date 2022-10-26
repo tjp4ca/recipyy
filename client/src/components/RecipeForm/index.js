@@ -57,7 +57,7 @@ const RecipeForm = () => {
         {error && <span>Something went wrong...</span>}
       </p>
       <div className='row'>Create a new recipe!</div>
-      <form onSubmit={handleFormSubmit} className='border border-danger'>
+      <form onSubmit={handleFormSubmit} className=''>
         <div>
         <input
           type="text"
@@ -65,7 +65,8 @@ const RecipeForm = () => {
           placeholder="Recipe name"
           value={formState.name}
           onChange={handleChange}
-          className='w-100'
+          style={{ minHeight: '50px' }}
+          className='w-100 border-c-blue backgroud-c-dark mb-3'
         ></input>
         </div>
 
@@ -75,7 +76,8 @@ const RecipeForm = () => {
           placeholder="Recipe description"
           value={formState.description}
           onChange={handleChange}
-          className='w-100'
+          style={{ minHeight: '100px' }}
+          className='w-100 border-c-blue mb-3 p-0'
         ></textarea>
         </div>
 
@@ -85,13 +87,14 @@ const RecipeForm = () => {
           placeholder="Recipe instructions"
           value={formState.instructions}
           onChange={handleChange}
-          className='w-100'
+          style={{ minHeight: '150px' }}
+          className='w-100 border-c-blue mb-3 p-0'
         ></textarea>
         </div>
 
 
         <div>
-        <button type="submit">
+        <button type="submit" className='btn-primary btn-lg'>
           Submit
         </button>
         </div>

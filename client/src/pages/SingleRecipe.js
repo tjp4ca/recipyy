@@ -20,30 +20,31 @@ const SingleRecipe = props => {
   }
   
   return (
-    <div className='text-white justify-content-center text-center container-fluid m-0 p-0 h-100'>
-      <div className='col-lg-12 text-center'>
+    <div className='text-white justify-content-center container-fluid m-0 p-0 h-100 row'>
+      <div className='col-lg-3'/>
+      <div className='col-lg-9'>
       <div className='mb-5'>
-        <p className='text-c-gold' style={{ fontWeight: 1000 }}>
+        <p className='text-c-blue' style={{ fontWeight: 1000 }}>
             {recipe.name}
         </p>
-        <p className='text-c-orange'>
+        <p className='text-c-green'>
           <span style={{ fontWeight: 700 }}>
             {recipe.createdBy}
           </span>{' '}
            on {recipe.createdAt}
         </p>
         <div className=''>
-          <p className='text-c-redorange'>{recipe.description}</p>
-          <p className='text-c-red'>{recipe.instructions}</p>
+          <p className='text-c-green'>{recipe.description}</p>
+          <p className='text-c-green'>{recipe.instructions}</p>
         </div>
       </div>
 
-      <span className='text-c-red' style={{ fontWeight: 1000 }}>Comments</span>
-      <div className='row justify-content-center sticky-top'>
+      <span className='text-c-blue' style={{ fontWeight: 1000 }}>Comments</span>
+      <div className='row sticky-top'>
         {Auth.loggedIn() && <CommentForm recipeId={recipe._id} />}
       </div>
       
-      <div className='row justify-content-center'>
+      <div className='row'>
         {recipe.commentCount > 0 && <CommentList comments={recipe.comments} />}
       </div>
 
