@@ -42,9 +42,9 @@ const Signup = () => {
     }
 
     return (
-        <div className='container'>
-            <div className='box2'>
-                <form className='form' onSubmit={handleClickSignupBtn}>
+        <div className='logSigncontainer'>
+            <div className='signBox'>
+                <form className='logSignform' onSubmit={handleClickSignupBtn}>
 
                     <div className='row tabBox mx-5 mt-5'>
                         <div className='tabBtn2 col' id='tabBtn2'><Link to="/login" className='tabBtnLink2'>Login</Link></div>
@@ -55,7 +55,7 @@ const Signup = () => {
                         <h2 className='printInput col-12'>Welcome {formInput.username}</h2>
                     </div>
 
-                    <div className='inputBox2 mx-5 mt-5'>
+                    <div className='signInputBox mx-5 mt-5'>
                         <input 
                             onChange={handleChange}
                             name='username'
@@ -69,7 +69,7 @@ const Signup = () => {
                         </span>
                     </div>
 
-                    <div className='inputBox2 mx-5 mt-5'>
+                    <div className='signInputBox mx-5 mt-5'>
                         <input 
                             onChange={handleChange}
                             name='email'
@@ -83,7 +83,7 @@ const Signup = () => {
                         </span>
                     </div>
 
-                    <div className='inputBox2 mx-5 mt-5'>
+                    <div className='signInputBox mx-5 mt-5'>
                         <input 
                             onChange={handleChange}
                             name='password'

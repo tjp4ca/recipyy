@@ -50,7 +50,7 @@
     background: url(kenny1.png);
     background-size: 200px;
     overflow: hidden;
-    animation: animate 4s linear infinite;
+    animation: animateBackground 4s linear infinite;
 }
 
 .gitIcon2 {
@@ -70,7 +70,7 @@
     background: url(matt1.png);
     background-size: 200px;
     overflow: hidden;
-    animation: animate 4s linear infinite;
+    animation: animateBackground 4s linear infinite;
 }
 
 .gitIcon3 {
@@ -90,7 +90,7 @@
     background: url(mike1.png);
     background-size: 200px;
     overflow: hidden;
-    animation: animate 4s linear infinite;
+    animation: animateBackground 4s linear infinite;
 }
 
 .gitIcon4 {
@@ -110,16 +110,15 @@
     background: url(nino1.png);
     background-size: 200px;
     overflow: hidden;
-    animation: animate 4s linear infinite;
+    animation: animateBackground 4s linear infinite;
 }
 
-@keyframes animate {
+@keyframes animateBackground {
     0%, 100% {
         height: 0px;
     }
     50% {
         height: 100%;
-        /* height: calc(100% - 20px); */
     }
 }
 
@@ -132,7 +131,6 @@
 
 .qrCodeTxt {
     text-transform: uppercase;
-    /* font-size: 0.75em; */
     margin-top: 20px;
     color: black;
     filter: drop-shadow(0 0 20px black)
