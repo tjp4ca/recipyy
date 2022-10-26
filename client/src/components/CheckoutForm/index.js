@@ -119,7 +119,7 @@ export default function CheckoutForm(){
         // Make sure to change this to your payment completion page
 
         
-        return_url: "http://localhost:3000/thank",
+        return_url: "https://glacial-dusk-61964.herokuapp.com/thank",
       },
     });
     // This point will only be reached if there is an immediate error when
