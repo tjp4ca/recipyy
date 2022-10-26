@@ -1,5 +1,6 @@
 import React from "react";
-import StripeContainer from "../components/StripeContainer"
+// import StripeContainer from "./StripeContainer";
+import StripeContainer from "../components/StripeContainer";
 
 const Donation = () => {
   return (
