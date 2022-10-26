@@ -22,7 +22,7 @@ const Home = () => {
       <div className="row mx-0 px-0">
 
         <div className="col-lg-2 text-white">
-          <div className='border-cr-blue h-75 my-3'>
+          <div className='border-cr-blue h-100 my-3'>
             <div className='sticky-top'>
             <img
             src={Chefhat}
@@ -54,7 +54,7 @@ const Home = () => {
         </div>
 
         <div className="col-lg-2 text-white">
-          <div className='border-cl-blue h-75 my-3'>
+          <div className='border-cl-blue h-100 my-3'>
           {loggedIn && (
             <div className='mx-3 sticky-top'>
               <RecipeForm />
