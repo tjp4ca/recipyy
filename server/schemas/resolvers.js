@@ -109,6 +109,21 @@ const resolvers = {
       }
     
       throw new AuthenticationError('Not logged in');
+    },
+
+    updateRecipe: async (parent, { id, description, instructions }) => {
+      // Find and update the matching class using the destructured args
+      return await Recipe.findOneAndUpdate(
+        { _id: id }, 
+        { description },
+        { instructions },
+        // Return the newly updated object instead of the original
+        { new: true }
+      );
+    },
+
+    removeRecipe: async (parent, { recipeId }) => {
+      return Recipe.findOneAndDelete({ _id: recipeId })
     }
   }
 };

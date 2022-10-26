@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_RECIPE } from '../utils/queries';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
+import RecipeUpdate from '../components/RecipeUpdate';
 import Auth from '../utils/auth';
 
 const SingleRecipe = props => {
@@ -37,6 +38,9 @@ const SingleRecipe = props => {
           <p className='text-c-green'>{recipe.description}</p>
           <p className='text-c-green'>{recipe.instructions}</p>
         </div>
+      </div>
+      <div>
+        <RecipeUpdate recipeId={recipe._id} ></RecipeUpdate>
       </div>
 
       <span className='text-c-blue' style={{ fontWeight: 1000 }}>Comments</span>

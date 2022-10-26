@@ -69,3 +69,14 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const UPDATE_RECIPE = gql`
+  mutation updateRecipe($name: String!, $description: String!, $instructions: String!) {
+    updateRecipe(name: $name, description: $description, instructions: $instructions) {
+      _id
+      name
+      description
+      instructions
+    }
+  }
+`;
