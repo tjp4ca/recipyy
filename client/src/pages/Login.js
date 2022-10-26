@@ -50,9 +50,9 @@ const Login = (props) => {
     }
 
     return (
-        <div className='container'>
-            <div className='box'>
-                <form className='form' onSubmit={handleClickLoginBtn}>
+        <div className='logSigncontainer'>
+            <div className='logBox'>
+                <form className='logSignform' onSubmit={handleClickLoginBtn}>
 
                     <div className='row tabBox mx-5 mt-5'>
                         <div className='tabBtn col'><Link to="/login" className='tabBtnLink'>Login</Link></div>
@@ -63,7 +63,7 @@ const Login = (props) => {
                         <h2 className='printInput col-12'>Hello {formInput.email}</h2>
                     </div>
 
-                    <div className='inputBox mx-5 mt-5'>
+                    <div className='logInputBox mx-5 mt-5'>
                         <input 
                             // use email to login
                             onChange={handleChange}
@@ -78,7 +78,7 @@ const Login = (props) => {
                         </span>
                     </div>
 
-                    <div className='inputBox mx-5 mt-5'>
+                    <div className='logInputBox mx-5 mt-5'>
                         <input 
                             onChange={handleChange}
                             name='password'
