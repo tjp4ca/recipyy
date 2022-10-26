@@ -43,7 +43,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="col-lg-8 text-white">
+        <div className="col-lg-6 text-white">
           <div className={`${loggedIn}`}>
             {loading ? (
               <div>Loading...</div>
@@ -53,7 +53,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="col-lg-2 text-white">
+        <div className="col-lg-4 text-white">
           <div className='border-cl-blue h-100 my-3'>
           {loggedIn && (
             <div className='mx-3 sticky-top'>
