@@ -1,6 +1,85 @@
 .home-box {
-    position: relative;
-    /* height: 530px; */
-    min-height: 100vh;
-    border-radius: 8px;
-  }
+  position: relative;
+  /* height: 530px; */
+  min-height: 100vh;
+  border-radius: 8px;
+}
+
+.text-c-blue {
+color: #00ccff;
+}
+
+.text-c-green {
+color: #4af3bb;
+}
+
+.text-c-gold {
+  color: #ffbc00;
+}
+
+.text-c-orange {
+  color: #ff9900;
+}
+
+.text-c-redorange {
+  color: #ff5e00;
+}
+
+.text-c-red {
+  color: #ff0800;
+}
+
+.border-cb-green {
+border-bottom-style: solid;
+border-color: #4af3bb;
+}
+
+.border-cb-blue {
+border-bottom-style: solid;
+border-color: #00ccff;
+}
+
+.border-cr-blue {
+border-right-style: solid;
+border-color: #00ccff;
+}
+
+.border-cl-blue {
+border-left-style: solid;
+border-color: #00ccff;
+}
+
+.border-cb-gold {
+  border-bottom-style: solid;
+  border-color: #ffbc00;
+}
+
+.border-c-blue {
+  border-style: solid;
+  border-color: #00ccff;
+}
+
+.background-c-dark {
+  background: #1a0433;
+}
+
+/* input.input-box, textarea { background: cyan; } */
+
+input[type="text"], textarea {
+
+  background-color : #1a0433; 
+
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #4af3bb;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #4af3bb;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #4af3bb;
+}

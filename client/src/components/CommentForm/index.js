@@ -32,6 +32,8 @@ const CommentForm = ({ recipeId }) => {
           placeholder="Comment on this recipe..."
           value={body}
           onChange={handleChange}
+          style={{ minHeight: '75px' , minWidth: '800px', width: '100%'}}
+          className='w-100'
         ></textarea>
 
         <button type="submit">

@@ -51,36 +51,53 @@ const RecipeForm = () => {
   };
 
   return (
-    <div>
-      <p className={`${characterCount === 280 || error ? 'text-error' : ''}`}>
-        Character Count: {characterCount}/280
+    <div className='container-fluid'>
+      <p className={`${characterCount === 10000 || error ? 'text-error' : ''}`}>
+        {/* Character Count: {characterCount}/280 */}
         {error && <span>Something went wrong...</span>}
       </p>
-      <form onSubmit={handleFormSubmit}>
+      <div className='row'>Create a new recipe!</div>
+      <form onSubmit={handleFormSubmit} className=''>
+        <div>
         <input
           type="text"
           name="name"
           placeholder="Recipe name"
           value={formState.name}
           onChange={handleChange}
+          style={{ minHeight: '50px' }}
+          className='w-100 border-c-blue backgroud-c-dark mb-3'
         ></input>
+        </div>
 
+        <div>
         <textarea
           name="description"
           placeholder="Recipe description"
           value={formState.description}
           onChange={handleChange}
+          style={{ minHeight: '100px' }}
+          className='w-100 border-c-blue mb-3 p-0'
         ></textarea>
+        </div>
 
+        <div>
         <textarea
           name="instructions"
           placeholder="Recipe instructions"
           value={formState.instructions}
           onChange={handleChange}
+          style={{ minHeight: '150px' }}
+          className='w-100 border-c-blue mb-3 p-0'
         ></textarea>
-        <button type="submit">
+        </div>
+
+
+        <div>
+        <button type="submit" className='btn-primary btn-lg'>
           Submit
         </button>
+        </div>
       </form>
     </div>
   );
