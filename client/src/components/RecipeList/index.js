@@ -8,28 +8,28 @@ const RecipeList = ({ recipes, title }) => {
 
   return (
     <div>
-      <h3>{title}</h3>
+      <h3 className='text-c-blue border-cb-blue mb-3'>{title}</h3>
       {recipes &&
         recipes.map(recipe => (
-          <div key={recipe._id}>
-            <p>
-              <Link
-                to={`/profile/${recipe.createdBy}`}
-                style={{ fontWeight: 700 }}
-              >
-                {recipe.createdBy}
-              </Link>{' '}
-              created on {recipe.createdAt}
-            </p>
+          <div key={recipe._id} className="mb-3 border-cb-green">
             <div>
               <Link to={`/recipe/${recipe._id}`}>
-                <p>{recipe.name}</p>
-                <p>{recipe.description}</p>
-                <p>
+                <h2 className="text-c-green">{recipe.name}</h2>
+                <p className="text-c-green">{recipe.description}</p>
+                <p className="text-c-blue">
                   Comments: {recipe.commentCount} | Click to{' '}
                   {recipe.commentCount ? 'see' : 'start'} the discussion!
                 </p>
               </Link>
+              <p className="text-c-blue">
+                <Link className="text-c-green"
+                  to={`/profile/${recipe.createdBy}`}
+                  style={{ fontWeight: 1000 }}
+                >
+                {recipe.createdBy}
+                </Link>{' '}
+                created on {recipe.createdAt}
+              </p>
             </div>
           </div>
         ))}

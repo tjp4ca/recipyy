@@ -20,7 +20,7 @@ const SingleRecipe = props => {
   }
   
   return (
-    <div>
+    <div className='text-white'>
       <div>
         <p>
             {recipe.name}
