@@ -38,12 +38,15 @@ const SingleRecipe = props => {
         </div>
       </div>
 
+      <span className='text-c-red' style={{ fontWeight: 1000 }}>Comments</span>
+      <div className='row justify-content-center sticky-top'>
+        {Auth.loggedIn() && <CommentForm recipeId={recipe._id} />}
+      </div>
+      
       <div className='row justify-content-center'>
         {recipe.commentCount > 0 && <CommentList comments={recipe.comments} />}
       </div>
-      <div className='row justify-content-center'>
-        {Auth.loggedIn() && <CommentForm recipeId={recipe._id} />}
-      </div>
+
       </div>
     </div>
   );

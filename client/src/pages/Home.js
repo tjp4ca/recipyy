@@ -5,6 +5,7 @@ import { QUERY_ME, QUERY_ME_BASIC, QUERY_RECIPES } from '../utils/queries';
 import Auth                                        from '../utils/auth';
 import FriendList                                  from '../components/FriendList';
 import RecipeForm                                  from '../components/RecipeForm';
+import Chefhat                                     from '../assets/chef-recipyy.png';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_RECIPES);
@@ -15,9 +16,6 @@ const Home = () => {
 
   const loggedIn = Auth.loggedIn();
 
-  const [yourRecipies, setYourRecipies] = useState(false);
-  const [allRecipies, setAllRecipies] = useState(false);
-  const [newRecipe, setNewRecipe] = useState(false);
 
   return (
     <div className="container-fluid mx-0 px-0 justify-content-center home-box">
@@ -25,6 +23,12 @@ const Home = () => {
 
         <div className="col-lg-2 text-white">
           <div className='border-cr-blue h-75 my-3'>
+            <div className='sticky-top'>
+            <img
+            src={Chefhat}
+            alt={'Hat'}
+            className="img-fluid"
+            />
           {loggedIn && userData ? (
             <div>
               <h1 className="text-c-blue">{userData.me.username}</h1>
@@ -35,6 +39,7 @@ const Home = () => {
               />
             </div>
           ) : null}
+          </div>
           </div>
         </div>
 
@@ -51,7 +56,7 @@ const Home = () => {
         <div className="col-lg-2 text-white">
           <div className='border-cl-blue h-75 my-3'>
           {loggedIn && (
-            <div className='mx-3'>
+            <div className='mx-3 sticky-top'>
               <RecipeForm />
             </div>
           )}

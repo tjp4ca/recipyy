@@ -5,8 +5,7 @@ const CommentList = ({ comments }) => {
   return (
     <div>
       <div>
-        <span className='text-c-red' style={{ fontWeight: 1000 }}>Comments</span>
-        <div className='row my-3 p-0 border-cb-gold'></div>
+        <div className='row my-3 p-0 border-cb-gold mx-auto' style={{ maxWidth: '200px' }}></div>
       </div>
       <div>
         {comments && comments.map(comment => (
