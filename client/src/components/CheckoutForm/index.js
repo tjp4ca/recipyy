@@ -119,7 +119,7 @@ export default function CheckoutForm(){
         // Make sure to change this to your payment completion page
 
         
-        return_url: "http://localhost:3000/team",
+        return_url: "http://localhost:3000/thank",
       },
     });
     // This point will only be reached if there is an immediate error when

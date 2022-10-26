@@ -48,7 +48,7 @@ const Donation = () => {
                     <img src='./contactless.png' className='contactless' />
                     <h3 className='number'>4242 4242 4242 4242</h3>
                     <h5 className='card-holder'><span>card holder</span><br />
-                        GW Bootcamp
+                        Gabe Perry
                     </h5>
                     <h5 className='valid'><span>Valid Thru</span><br />04/24</h5>
                     <img src='./visa.png' className='visa' />

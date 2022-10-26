@@ -25,6 +25,7 @@ import Profile from './pages/Profile';
 import PageNotFound from './pages/PageNotFound';
 import Donation from './pages/Donation';
 import Team from './pages/Team';
+import Thank from './pages/Thank';
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -95,6 +96,11 @@ function App() {
                   <Route 
                     path="/donation" 
                     element={<Donation />} 
+                  />
+
+                  <Route 
+                    path="/thank" 
+                    element={<Thank />} 
                   />
 
                   <Route 
