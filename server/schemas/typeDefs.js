@@ -46,6 +46,8 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     addFriend(friendId: ID!): User
     addRecipe(name: String!, description: String!, instructions: String!): Recipe
+    updateRecipe(name: String!, description: String!, instructions: String!): Recipe
+    deleteRecipe(name: String!, _id:ID!): Recipe
     addComment(recipeId: ID!, body: String!): Recipe
   }
 `;
